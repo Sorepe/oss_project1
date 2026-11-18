@@ -64,10 +64,11 @@ class Player(pygame.sprite.Sprite):
         # TODO(F1): 왼쪽 방향키(keys[pygame.K_LEFT])를 누르고 있으면 PLAYER_SPEED 만큼 왼쪽으로,
         #           오른쪽 방향키(keys[pygame.K_RIGHT])면 오른쪽으로 움직이게 할 것.
         #           플레이어가 화면 왼쪽·오른쪽 끝 밖으로 나가지 않도록 위치를 제한.
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_LEFT] and self.rect.x >= 0:
             self.rect.x = self.rect.x - PLAYER_SPEED
-        elif keys[pygame.K_RIGHT]:
+        elif keys[pygame.K_RIGHT] and self.rect.x <= 432:
             self.rect.x = self.rect.x + PLAYER_SPEED
+        # Player의 초기위치가 240이고 사용공간이 480이므로 0을 넘어 -값을 가지거나 480을 넘을일이 없으므로 따로 제어하지않음
 
     def shoot(self):
         """플레이어 위쪽 가운데에서 출발하는 총알 하나를 만들어 돌려준다."""
