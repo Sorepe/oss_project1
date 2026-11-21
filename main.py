@@ -103,6 +103,13 @@ class Game:
 
         # TODO(F3): 총알과 적이 부딪히면 둘 다 없애고, 맞힌 적 하나당 SCORE_PER_ENEMY 점을 더할 것.
         #           힌트: pygame.sprite.groupcollide
+        hits = pygame.sprite.groupcollide(self.bullets, self.enemies, True, True)
+        if len(hits) > 0:
+            hit_enemys = set()
+            for enemies in hits.values():
+                for enemy in enemies:
+                    hit_enemys.add(enemy)
+            self.score += len(hit_enemys) * SCORE_PER_ENEMY
 
         # TODO(F4): 적이 플레이어에 닿으면 그 적을 없애고 생명(self.lives)을 1 줄일 것.
         #           힌트: pygame.sprite.spritecollide
@@ -140,6 +147,8 @@ class Game:
         # F2 : 총알 소멸 확인용
         # self.draw_text(f"Bullets: {len(self.bullets)}", self.font, WHITE, bottomleft=(10, HEIGHT - 10))
         # TODO(F3): 화면 왼쪽 위에 현재 점수를 "SCORE: 120" 형태로 표시할 것.
+        self.draw_text(f"SCORE: {self.score}", self.font, WHITE, topleft=(10, 10))
+
         if self.game_over:
             self.draw_game_over()
         pygame.display.flip()

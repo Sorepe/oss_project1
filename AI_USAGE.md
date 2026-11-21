@@ -16,3 +16,7 @@ AI 를 전혀 쓰지 않았다면 표를 지우고 "이 과제에서 생성형 A
 | 2026-11-19 | Copilot | F1 | Surface객체에서 만든 rect의 x, y에 따라서 Surface 객체가 그려지는건가 | Player 객체의 이미지 이동을 위해서 필요한 지식만 얻고 직접 작성 |
 | 2026-11-19 | Copilot | F1 | rect객체를 만들때 설정한 midbottom이 계속 기준점으로 활동되는게 아닌건가 | Player 객체의 이동 한계 지정중 의도하지 않은 영역까지 가서 필요한 지식만 얻고 직접 작성 |
 | 2026-11-21 | Copilot | F2 | Surface 객체의 rect 높이를 가져오는 방법 | rect.height, rect.bottom을 숙지하고 직접 수정 |
+| 2026-11-21 | Copilot | F3 | 문자열 앞에 f 역할 | 숙지하고 점수 출력에 사용 |
+| 2026-11-21 | Copilot | F3 | pygame.sprite의 groupcollide의 사용법과 반환형태 | 숙지하고 충돌 판정에 사용 |
+| 2026-11-21 | Copilot | F3 | python dictionary 사용법과 값을 꺼내서 쓰는 방법 | 숙지하고 for문으로 값을 빼서 활용하는 방식 구현에 사용 |
+| 2026-11-21 | Copilot | F3 | python set 사용법 | 숙지하고 판정 중복 방지에 사용 |
