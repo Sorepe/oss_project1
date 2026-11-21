@@ -33,6 +33,7 @@ class Game:
         pygame.display.set_caption(TITLE)
         self.clock = pygame.time.Clock()
         self.font = pygame.font.Font(None, 32)
+        self.mid_font = pygame.font.Font(None, 45)
         self.big_font = pygame.font.Font(None, 72)
         pygame.time.set_timer(SPAWN_ENEMY, ENEMY_SPAWN_MS)
         self.background = Background()
@@ -113,14 +114,20 @@ class Game:
 
         # TODO(F4): 적이 플레이어에 닿으면 그 적을 없애고 생명(self.lives)을 1 줄일 것.
         #           힌트: pygame.sprite.spritecollide
-
+        collision = pygame.sprite.spritecollide(self.player, self.enemies, True)
+        if len(collision) > 0:
+            self.lives -= len(collision)
+            
         # 화면 아래로 지나간 적은 없앨 것.
         for enemy in list(self.enemies):
             if enemy.rect.top > HEIGHT:
                 enemy.kill()
                 # TODO(F4): 적이 아래로 지나갔으니 생명을 1 줄일 것.
+                self.lives -= 1
 
         # TODO(F4): 생명이 0 이하가 되면 self.end_game() 을 실행할 것.
+        if self.lives <= 0:
+            self.end_game()
 
     def end_game(self):
         """게임 오버 처리."""
@@ -168,6 +175,10 @@ class Game:
     def draw_game_over(self):
         """게임 오버 화면. self.game_over 가 True 일 때 draw() 가 부른다."""
         # TODO(F4): 화면 가운데에 "GAME OVER" 와 이번 판 점수를 표시할 것.
+        cx = WIDTH // 2
+        self.draw_text("GAME OVER", self.big_font, WHITE, center=(cx, 200))
+        self.draw_text(f"SCORE: {self.score}", self.mid_font, WHITE, center=(cx, 280))
+
         # TODO(F5): 최고 점수("HIGH SCORE: 300")와 재시작 안내("Press R to restart")도 표시할 것.
         pass
 
