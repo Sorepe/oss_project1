@@ -33,6 +33,7 @@ class Game:
         pygame.display.set_caption(TITLE)
         self.clock = pygame.time.Clock()
         self.font = pygame.font.Font(None, 32)
+        self.mid_font = pygame.font.Font(None, 45)
         self.big_font = pygame.font.Font(None, 72)
         pygame.time.set_timer(SPAWN_ENEMY, ENEMY_SPAWN_MS)
         self.background = Background()
