@@ -73,6 +73,10 @@ class Game:
                     self.running = False
                 # TODO(F2): 스페이스 키를 누르면 self.player.shoot() 으로 총알을 만들어
                 #           self.bullets 와 self.all_sprites 두 그룹에 넣을 것. (게임 오버 중에는 쏘지 않게)
+                elif self.game_over == False and event.key == pygame.K_SPACE:
+                    bullet = self.player.shoot()
+                    self.bullets.add(bullet)
+                    self.all_sprites.add(bullet)
                 # TODO(F5): 게임 오버 상태에서 R 키를 누르면 self.reset() 으로 새 판을 시작할 것.
 
     def handle_title_event(self, event):
@@ -133,6 +137,8 @@ class Game:
             self.screen.blit(self.dark_shade, (0, 0))  # 게임 오버 글자가 잘 보이게
         self.screen.blit(self.hud_shade, (0, 0))  # 점수·생명 글자 뒤 어두운 띠
         self.draw_text(f"LIVES: {self.lives}", self.font, WHITE, topright=(WIDTH - 10, 10))
+        # F2 : 총알 소멸 확인용
+        # self.draw_text(f"Bullets: {len(self.bullets)}", self.font, WHITE, bottomleft=(10, HEIGHT - 10))
         # TODO(F3): 화면 왼쪽 위에 현재 점수를 "SCORE: 120" 형태로 표시할 것.
         if self.game_over:
             self.draw_game_over()
