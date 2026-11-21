@@ -140,6 +140,8 @@ class Game:
         # F2 : 총알 소멸 확인용
         # self.draw_text(f"Bullets: {len(self.bullets)}", self.font, WHITE, bottomleft=(10, HEIGHT - 10))
         # TODO(F3): 화면 왼쪽 위에 현재 점수를 "SCORE: 120" 형태로 표시할 것.
+        self.draw_text(f"SCORE: {self.score}", self.font, WHITE, topleft=(10, 10))
+
         if self.game_over:
             self.draw_game_over()
         pygame.display.flip()
