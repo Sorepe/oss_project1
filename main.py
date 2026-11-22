@@ -190,10 +190,10 @@ class Game:
         # TODO(F4): 화면 가운데에 "GAME OVER" 와 이번 판 점수를 표시할 것.
         cx = WIDTH // 2
         self.draw_text("GAME OVER", self.big_font, WHITE, center=(cx, 200))
-        self.draw_text(f"SCORE: {self.score}", self.mid_font, WHITE, center=(cx, 280))
+        self.draw_text(f"SCORE: {self.score}", self.mid_font, WHITE, center=(cx, 320))
 
         # TODO(F5): 최고 점수("HIGH SCORE: 300")와 재시작 안내("Press R to restart")도 표시할 것.
-        self.draw_text(f"HIGH SCORE: {self.high_score}", self.mid_font, WHITE, center=(cx, 330))
+        self.draw_text(f"HIGH SCORE: {self.high_score}", self.mid_font, WHITE, center=(cx, 380))
         if pygame.time.get_ticks() // 500 % 2 == 0:
             self.draw_text("Press R to restart", self.font, YELLOW, center=(cx, 540))
             
