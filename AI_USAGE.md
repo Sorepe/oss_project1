@@ -21,3 +21,5 @@ AI 를 전혀 쓰지 않았다면 표를 지우고 "이 과제에서 생성형 A
 | 2026-11-21 | Copilot | F3 | python dictionary 사용법과 값을 꺼내서 쓰는 방법 | 숙지하고 for문으로 값을 빼서 활용하는 방식 구현에 사용 |
 | 2026-11-21 | Copilot | F3 | python set 사용법 | 숙지하고 판정 중복 방지에 사용 |
 | 2026-11-21 | Copilot | F4 | pygame.sprite의 spritecollide의 인자와 반환형태 | 숙지하고 충돌 판정에 사용 |
+| 2026-11-22 | Copilot | F5 | python에서 파일을 처리하는 방법 | open과 파일 read/write 문법을 보고 load_high_score, save_high_score에 적용 |
+| 2026-11-22 | Copilot | F5 | python에서 try/except로 예외 처리하는 방법 | open으로 발생할 수 있는 크래시를 방지하고 반환 처리 하는데 직접 작성 |
